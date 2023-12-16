@@ -5,39 +5,49 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-size: 10px;
 }
 body{
   font-family: 'Poppins', sans-serif;
   color: black;
 }
-.active{
+body.active{
   background: black;
+  color: white !important;
 }
 .nav {
   width: 90%;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 .container{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+.logo{
+  font-size: 1.2rem;
+  font-weight: bolder;
+  cursor: pointer;
 }
 .nav .container .main_list{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.nav .container .main_list .left ul {
+.nav .container .main_list ul {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.nav .container .main_list .left ul  li{
+.nav .container .main_list ul  li{
   margin:0  1rem;
   list-style: none;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-transform: capitalize;
+  cursor: pointer;
 }
-.nav .container .main_list .right{
+.nav .container .right{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +56,6 @@ body{
 .bodylight{
   margin: 0 1rem;
 }
-
 
 
 /* The switch - the box around the slider */
@@ -107,65 +116,55 @@ input:checked + .slider:before {
   /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
   box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }
-
-/* Medai qurey section */
-
-/* @media screen and (min-width: 768px) and (max-width: 1024px) {
-  
-  .container{
-      margin: 0;
-  }
-  
+.fa-solid{
+  font-size: 1.2rem;
+  transition: width 2s;
+  cursor: pointer;
 }
-
-
-
-
-@media screen and (max-width:768px) {
-  
-  .container{
+.manu{
+  display: none;
+}
+/* Medai qurey section */
+@media(max-width: 768px) {
+    .manu{
+      display: block;
+    }
+    .nav .container .main_list{
+      position: absolute;
+      top: 3rem;
+    }
+    .container{
       margin: 0;
   }
   
-  .nav div.logo{
-      margin-left: 15px;
-  }
-  
-  .nav div.main_list{
+
+  .nav .main_list{
       width: 100%;
-      margin-top: 65px;
+      margin-top: 5px;
       height: 0px;
       overflow: hidden;
   }
-  
+
   .nav div.show_list{
       height: 200px;
   }
-  
-  .nav div.main_list ul{
+
+  .nav .main_list ul{
       flex-direction: column;
       width: 100%;
       height: 200px;
-      top: 80px;
-      right: 0;
-      left: 0;
   }
-  
+
   .nav div.main_list ul li{
       width: 100%;
       height: 40px;
-      background-color:rgba(0,0,255,0.8);
   }
-  
-  .nav div.main_list ul li a{
+
+  .nav div.main_list ul li{
     text-align: center;
       line-height: 40px;
       width: 100%;
       height: 40px;
       display: table;
   }
-  
-  .nav div.media_button{
-      display: block;
-  }
-} */
+}
