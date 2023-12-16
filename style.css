@@ -5,10 +5,14 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-size: 10px;
 }
 body{
   font-family: 'Poppins', sans-serif;
   color: black;
+}
+.active{
+  background: black;
 }
 .nav {
   width: 90%;
@@ -39,7 +43,9 @@ body{
   justify-content: center;
   
 }
-
+.bodylight{
+  margin: 0 1rem;
+}
 
 
 
