@@ -1,163 +1,110 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.4s;
-  font-family: -apple-system,
-  BlinkMacSystemFont,
-  "Segoe UI",
-  Roboto,
-  Helvetica,
-  Arial,
-  sans-serif,
-  "Apple Color Emoji",
-  "Segoe UI Emoji",
-  "Segoe UI Symbol";
-}
-
-.container{
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-/* Navbar section */
-
-.nav{
-  width: 100%;
-  height: 65px;
-  position: fixed;
-  line-height: 65px;
-  text-align: center;
-  background-color: rgba(0,0,255,0.8);
-}
-
-.nav div.logo{
-  width: 180px;
-  height: 10px;
-  position: absolute;
-}
-
-.nav div.logo a{
   text-decoration: none;
-  color: #fff;
-  font-size: 1.8em;
-  text-transform: uppercase;
 }
-
-.nav div.logo a:hover {
-  color: #c0c0c0;
+body{
+  font-family: 'Poppins', sans-serif;
+  color: black;
 }
-
-.nav div.main_list{
-  width: 600px;
-  height: 65px;
-  float: right;
+.nav {
+  width: 90%;
+  margin: 1rem auto;
 }
-
-.nav div.main_list ul{
-  width:100%;
-  height: 65px;
+.container{
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav .container .main_list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav .container .main_list .left ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav .container .main_list .left ul  li{
+  margin:0  1rem;
   list-style: none;
 }
-
-.nav div.main_list ul li{
-  width: 120px;
-  height: 65px;
+.nav .container .main_list .right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
-.nav div.main_list ul li a{
-  text-decoration: none;
-  color: #fff;
-  line-height: 65px;
-  text-transform: uppercase;
-}
 
-.nav div.main_list ul li a:hover{
-  color: #c0c0c0;
-}
 
-.nav div.media_button {
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  position: absolute;
-  right: 15px;
-  top: 12px;
-  display: none;
-}
 
-.nav div.media_button button.main_media_button {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;;
-  outline: 0;
-  border: none;
-  cursor: pointer;
-}
-
-.nav div.media_button button.main_media_button span{
-  width: 98%;
-  height: 1px;
+/* The switch - the box around the slider */
+.switch {
   display: block;
-  background-color: #fff;
-  margin-top: 9px;
-  margin-bottom: 10px;
+  --width-of-switch: 3.5em;
+  --height-of-switch: 2em;
+  /* size of sliding icon -- sun and moon */
+  --size-of-icon: 1.4em;
+  /* it is like a inline-padding of switch */
+  --slider-offset: 0.3em;
+  position: relative;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
 }
 
-.nav div.media_button button.main_media_button:hover span:nth-of-type(1){
-  transform: rotateY(180deg);
-  transition: all 0.5s;
-  background-color: #c0c0c0;
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.nav div.media_button button.main_media_button:hover span:nth-of-type(2){
-  transform: rotateY(180deg);
-  transition: all 0.4s;
-  background-color: #c0c0c0;
-}
-
-.nav div.media_button button.main_media_button:hover span:nth-of-type(3){
-  transform: rotateY(180deg);
-  transition: all 0.3s;
-  background-color: #c0c0c0;
-}
-
-.nav div.media_button button.active span:nth-of-type(1) {
-  transform: rotate3d(0, 0, 1, 45deg);
+/* The slider */
+.slider {
   position: absolute;
-  margin: 0;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f4f5;
+  transition: .4s;
+  border-radius: 30px;
 }
 
-.nav div.media_button button.active span:nth-of-type(2) {
-  display: none;
-}
-
-.nav div.media_button button.active span:nth-of-type(3) {
-  transform: rotate3d(0, 0, 1, -45deg);
+.slider:before {
   position: absolute;
-  margin: 0;
+  content: "";
+  height: var(--size-of-icon,1.4em);
+  width: var(--size-of-icon,1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset,0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+  ;
+ transition: .4s;
 }
 
-.nav div.media_button button.active:hover span:nth-of-type(1) {
-  transform: rotate3d(0, 0, 1, 20deg);
+input:checked + .slider {
+  background-color: #303136;
 }
 
-.nav div.media_button button.active:hover span:nth-of-type(3) {
-  transform: rotate3d(0, 0, 1, -20deg);
-}
-
-/* Home section */
-
-.home{
-  width: 100%;
-  height: 100vh;
-  background-color: #ddd;
+input:checked + .slider:before {
+  left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+  background: #303136;
+  /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }
 
 /* Medai qurey section */
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+/* @media screen and (min-width: 768px) and (max-width: 1024px) {
   
   .container{
       margin: 0;
@@ -215,4 +162,4 @@
   .nav div.media_button{
       display: block;
   }
-}
+} */
